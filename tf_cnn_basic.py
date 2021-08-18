@@ -63,12 +63,12 @@ def Pooling(data, pool_type = 'avg', kernel = (2, 2), pad = 'valid', stride = (2
     if pool_type=='avg':
         return layers.AveragePooling2D(pool_size = kernel, stride = stride, padding = pad, name = name)(data)
     else:
-        return Layers.MaxPooling2D(pool_size = kernel, stride = stride, padding = pad, name = name)(data)
+        return layers.MaxPooling2D(pool_size = kernel, stride = stride, padding = pad, name = name)(data)
 
-def ElementWiseSum(x,y,name=None):
+def ElementWiseSum(x, y, name = None):
     return tf.add(x = x, y = y, name = None)
 
-def Upsampling(lf_data, scale=2,sample_type='nearest',num_args=1,name=None):
+def Upsampling(lf_data, scale = 2, sample_type = 'nearest', num_args = 1, name = None):
     return layers.UpSampling2D(size = (scale, scale), name = None)(lf_data)
 
 
