@@ -3,15 +3,15 @@ import tensorflow.keras as keras
 import keras.layers as layers
 
 
-def BN(data, bn_momentum=0.9,name=None):
+def BN(data, bn_momentum = 0.9, name = None):
 
     return layers.BatchNormalization(momentum = bn_momentum, name = None)(data)
 
-def AC(data,name=None):
+def AC(data, name = None):
 
     return layers.ReLU(data)
 
-def BN_AC(data, momentum=0.9,name=None):
+def BN_AC(data, momentum = 0.9, name = None):
     bn = BN(data, bn_momentum = momentum)
     bn_ac = AC(bn)
 
